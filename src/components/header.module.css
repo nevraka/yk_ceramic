@@ -1,0 +1,19 @@
+.category {
+  margin-left: 40px;
+  cursor: pointer;
+}
+.categories {
+  padding: 30px;
+  text-align: center;
+}
+.header {
+  margin: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.aboutme {
+  padding-right: 20px;
+  font-size: 15px;
+  padding-top: 30px;
+  text-align: center;
+}
