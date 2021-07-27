@@ -1,6 +1,8 @@
+.logo {
+  cursor: pointer;
+}
 .category {
   margin-left: 40px;
-  cursor: pointer;
 }
 .categories {
   padding: 30px;

@@ -1,28 +1,20 @@
-import { createClient } from 'contentful';
+import Head from 'next/head';
+import Header from '../components/Header';
+import ProductList from '../components/ProductList';
 
-export async function getStaticProps() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID || '',
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY || '',
-  });
+//useeffecttekıler productlıste
+//bunun ıcınde product list olacak ama categoryıd '' olacak
 
-  const res = await client.getEntries({ content_type: 'shop' });
-  console.log(res);
-
-  return {
-    props: {
-      shops: res.items,
-    },
-  };
-}
-
-interface ShopsProps {
-  shops: [];
-}
-
-const Shop = ({ shops }: ShopsProps) => {
-  console.log(shops);
-  return <div>XXX</div>;
+const Shop = () => {
+  return (
+    <div>
+      <Head>
+        <title>Yakaart Ceramic</title>
+      </Head>
+      <Header />
+      <ProductList categoryId="" />
+    </div>
+  );
 };
 
 export default Shop;

@@ -1,54 +1,49 @@
-import React, { Dispatch, SetStateAction } from 'react';
-import { createClient } from 'contentful';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import styles from './header.module.css';
+import styles from './Header.module.css';
 import profilePic from '../../public/profilePic.png';
 import Link from 'next/link';
-
-export async function getStaticProps() {
-  const client = createClient({
-    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID || '',
-    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY || '',
-  });
-  const res = await client.getEntries({ content_type: 'category' });
-
-  console.log(res.items);
-  return {
-    props: {
-      categories: res.items,
-    },
-  };
-}
+import withClient from '../utils/withClient';
+import { ContentfulClientApi } from 'contentful';
 
 interface HeaderProps {
-  categories: any[];
-  setSelectedCategory: Dispatch<SetStateAction<string>>;
+  client: ContentfulClientApi;
 }
 
-export const Header = ({ categories, setSelectedCategory }: HeaderProps) => {
+const Header = ({ client }: HeaderProps) => {
+  const [categories, setCategories] = useState<any[]>([]);
+
+  useEffect(() => {
+    const getCategories = async () => {
+      const res = await client.getEntries({ content_type: 'category' });
+      setCategories(res.items);
+    };
+    getCategories();
+  }, []);
+
   return (
     <div className={styles.header}>
-      <Image
-        height="100px"
-        width="100px"
-        src={profilePic}
-        alt="Picture of the brand"
-      />
+      <Link href="/">
+        <Image
+          width={100}
+          height={100}
+          className={styles.logo}
+          src={profilePic}
+          alt="Picture of the brand"
+        />
+      </Link>
       <div className={styles.categories}>
         {categories.map((category) => (
-          <span
-            className={styles.category}
-            onClick={() => setSelectedCategory(category.sys.id)}
-          >
-            {category.fields.title}
-          </span>
+          <Link href={`/category/${category.sys.id}`}>
+            <a className={styles.category}>{category.fields.title}</a>
+          </Link>
         ))}
       </div>
       <div className={styles.aboutme}>
-        <Link href="/Aboutme">About me</Link>
+        <Link href="/AboutMe">About me</Link>
       </div>
     </div>
   );
 };
 
-export default Header;
+export default withClient(Header);
