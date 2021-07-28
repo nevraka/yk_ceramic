@@ -3,7 +3,7 @@
 //map edıp product render edecek
 
 import React, { useState, useEffect } from 'react';
-import Product from './Product';
+import ProductListItem from './ProductListItem';
 import withClient from '../utils/withClient';
 import { ContentfulClientApi } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -35,7 +35,7 @@ const ProductList = ({ client, categoryId }: ProductListProps) => {
             ? `https:${product.fields.image[0].fields.file.url}`
             : '';
         return (
-          <Product
+          <ProductListItem
             key={product.sys.id}
             imageUrl={imageUrl}
             description={() =>
@@ -43,6 +43,7 @@ const ProductList = ({ client, categoryId }: ProductListProps) => {
             }
             title={product.fields.title}
             price={product.fields.price}
+            productId={product.sys.id}
           />
         );
       })}
