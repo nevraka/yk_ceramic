@@ -3,7 +3,6 @@
 
 import React from 'react';
 import ProductList from '../../components/ProductList';
-import Header from '../../components/Header';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -14,9 +13,8 @@ const Category = () => {
   return (
     <div>
       <Head>
-        <title>Yakaart Ceramic</title>
+        <title>Yakaart Ceramic - Categories</title>
       </Head>
-      <Header />
       <ProductList categoryId={categoryId} />
     </div>
   );
