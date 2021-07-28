@@ -1,20 +1,19 @@
 import React from 'react';
 
 interface ButtonProps {
-  value: string;
-  onClick: (v: string) => void;
-  placeholder: string;
-  label: string;
-  disabled: boolean;
-  loading: boolean;
-  type: 'submit' | 'button';
-  classNames: string;
+  value?: string;
+  onClick?: () => void;
+  type?: 'submit' | 'button';
+  children?: string;
+  className?: string;
 }
 
-const Button = ({ placeholder }: ButtonProps) => {
+const Button = ({ onClick, type, value, children, className }: ButtonProps) => {
   return (
     <div className="app">
-      <button>{placeholder}</button>
+      <button className={className} onClick={onClick} type={type} value={value}>
+        {children}
+      </button>
     </div>
   );
 };
