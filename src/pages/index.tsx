@@ -11,7 +11,6 @@ const Shop = () => {
       <Head>
         <title>Yakaart Ceramic</title>
       </Head>
-      <Header />
       <ProductList categoryId="" />
     </div>
   );

@@ -24,23 +24,31 @@ const Header = ({ client }: HeaderProps) => {
   return (
     <div className={styles.header}>
       <Link href="/">
-        <Image
-          width={100}
-          height={100}
-          className={styles.logo}
-          src={profilePic}
-          alt="Picture of the brand"
-        />
+        <a>
+          <Image
+            width={100}
+            height={100}
+            className={styles.logo}
+            src={profilePic}
+            alt="Picture of the brand"
+          />
+        </a>
       </Link>
       <div className={styles.categories}>
         {categories.map((category) => (
-          <Link href={`/category/${category.sys.id}`}>
+          <Link
+            passHref
+            key={category.sys.id}
+            href={`/Category/${category.sys.id}`}
+          >
             <a className={styles.category}>{category.fields.title}</a>
           </Link>
         ))}
       </div>
       <div className={styles.aboutme}>
-        <Link href="/AboutMe">About me</Link>
+        <Link passHref href="/AboutMe">
+          About me
+        </Link>
       </div>
     </div>
   );

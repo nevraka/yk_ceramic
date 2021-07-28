@@ -1,7 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import avatar from '../../public/avatar.png';
-import Header from '../components/Header';
 import styles from './Aboutme.module.css';
 
 interface HeaderProps {
@@ -12,10 +11,6 @@ interface HeaderProps {
 const AboutMe = ({ categories, setSelectedCategory }: HeaderProps) => {
   return (
     <div>
-      <Header
-        categories={categories}
-        setSelectedCategory={setSelectedCategory}
-      />
       <div className={styles.head}>
         <Image
           className={styles.image}
