@@ -5,6 +5,7 @@ import profilePic from '../../public/profilePic.png';
 import Link from 'next/link';
 import withClient from '../utils/withClient';
 import { ContentfulClientApi } from 'contentful';
+import { GrInstagram, GrCart } from 'react-icons/gr';
 
 interface HeaderProps {
   client: ContentfulClientApi;
@@ -45,10 +46,26 @@ const Header = ({ client }: HeaderProps) => {
           </Link>
         ))}
       </div>
-      <div className={styles.aboutme}>
-        <Link passHref href="/AboutMe">
-          About me
-        </Link>
+      <div className={styles.right}>
+        <span className={styles.inst}>
+          <Link href="https://www.instagram.com/yakaart_ceramic/?hl=en">
+            <a>
+              <GrInstagram />
+            </a>
+          </Link>
+        </span>
+        <span className={styles.cart}>
+          <Link href="https://www.shopier.com/ShowProductNew/storefront.php?shop=yakaart&sid=NlN4b0xtZlBhclJWWHR4ZTBfLTFfIF8g">
+            <a>
+              <GrCart />
+            </a>
+          </Link>
+        </span>
+        <span className={styles.aboutme}>
+          <Link passHref href="/AboutMe">
+            <a>About me</a>
+          </Link>
+        </span>
       </div>
     </div>
   );

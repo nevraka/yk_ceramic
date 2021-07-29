@@ -1,21 +1,30 @@
+.header {
+  margin: 8px 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .logo {
   cursor: pointer;
 }
 .category {
-  margin-left: 40px;
+  margin: 0 20px;
 }
 .categories {
-  padding: 30px;
-  text-align: center;
-}
-.header {
-  margin: 15px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
-.aboutme {
-  padding-right: 20px;
-  font-size: 15px;
-  padding-top: 30px;
-  text-align: center;
+.right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.right > span {
+  display: flex;
+  font-size: 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+span.aboutme {
+  font-size: 16px;
 }
