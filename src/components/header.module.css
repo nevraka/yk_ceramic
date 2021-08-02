@@ -1,14 +1,16 @@
 .header {
-  margin: 8px 12px;
+  padding: 8px 12px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: 16px;
 }
 .logo {
   cursor: pointer;
 }
 .category {
   margin: 0 20px;
+  color: black;
 }
 .categories {
   display: flex;
@@ -19,12 +21,8 @@
   flex-direction: row;
   align-items: center;
 }
-.right > span {
-  display: flex;
+.icon {
   font-size: 20px;
   margin: 0 10px;
-  cursor: pointer;
-}
-span.aboutme {
-  font-size: 16px;
+  color: black;
 }
