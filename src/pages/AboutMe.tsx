@@ -3,12 +3,7 @@ import Image from 'next/image';
 import avatar from '../../public/avatar.png';
 import styles from './Aboutme.module.css';
 
-interface HeaderProps {
-  categories: any[];
-  setSelectedCategory: Dispatch<SetStateAction<string>>;
-}
-
-const AboutMe = ({ categories, setSelectedCategory }: HeaderProps) => {
+const AboutMe = () => {
   return (
     <div>
       <div className={styles.head}>

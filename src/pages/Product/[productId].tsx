@@ -22,7 +22,6 @@ const ProductDetails = ({ client }: ProductDetailsProps) => {
         return;
       }
       const res = await client.getEntry(productId as string);
-      console.log(res);
       setProduct(res);
     };
     getEntry();
