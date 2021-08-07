@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './ProductListItem.module.css';
-import Link from 'next/link';
-import Button from '../components/Button';
-import Product from './ProductDetail';
+import LinkButton from './LinkButton';
 
 interface ProductListItemProps {
   imageUrl: string;
@@ -15,9 +13,7 @@ interface ProductListItemProps {
 const ProductListItem = ({
   productId,
   imageUrl,
-  description,
   title,
-  price,
 }: ProductListItemProps) => {
   return (
     <div className={styles.container}>
@@ -25,9 +21,12 @@ const ProductListItem = ({
         {imageUrl && <img src={imageUrl} className={styles.image} />}
         <div className={styles.compact}>
           <h2 className={styles.heading}>{title}</h2>
-          <Link href={`/Product/${productId}`}>
-            <Button>More details</Button>
-          </Link>
+          <LinkButton
+            className={styles.linkButton}
+            href={`/Product/${productId}`}
+          >
+            More details
+          </LinkButton>
         </div>
       </div>
     </div>
