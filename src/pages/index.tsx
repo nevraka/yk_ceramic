@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Header from '../components/Header';
+import HomeCarousel from '../components/HomeCarousel';
 import ProductList from '../components/ProductList';
 
 //useeffecttekıler productlıste
@@ -11,6 +11,7 @@ const Shop = () => {
       <Head>
         <title>Yakaart Ceramic</title>
       </Head>
+      <HomeCarousel />
       <ProductList categoryId="" />
     </div>
   );
