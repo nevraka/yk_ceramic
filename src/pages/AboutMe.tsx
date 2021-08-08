@@ -2,10 +2,12 @@ import React, { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import avatar from '../../public/avatar.png';
 import styles from './Aboutme.module.css';
+import Header from '../components/Header';
 
 const AboutMe = () => {
   return (
     <div>
+      <Header />
       <div className={styles.head}>
         <Image
           className={styles.image}

@@ -5,6 +5,7 @@ import { ContentfulClientApi } from 'contentful';
 import { useRouter } from 'next/router';
 import withClient from '../../utils/withClient';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Header from '../../components/Header';
 
 interface ProductDetailsProps {
   client: ContentfulClientApi;
@@ -41,6 +42,7 @@ const ProductDetails = ({ client }: ProductDetailsProps) => {
       <Head>
         <title>Yakaart Ceramic - Product</title>
       </Head>
+      <Header />
       <ProductDetail
         key={product.sys.id}
         imageUrl={imageUrl}

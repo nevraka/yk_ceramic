@@ -3,6 +3,7 @@ import { ContentfulClientApi } from 'contentful';
 import withClient from '../utils/withClient';
 import Head from 'next/head';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Header from '../components/Header';
 
 interface GiftCardProps {
   client: ContentfulClientApi;
@@ -32,6 +33,7 @@ const GiftCard = ({ client }: GiftCardProps) => {
       <Head>
         <title>Yakaart Ceramic - Gift Card</title>
       </Head>
+      <Header />
       <div>{desc}</div>
     </div>
   );
