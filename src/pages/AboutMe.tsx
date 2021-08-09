@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import avatar from '../../public/avatar.png';
 import styles from './Aboutme.module.css';

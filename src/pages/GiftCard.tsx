@@ -7,6 +7,9 @@ import Header from '../components/Header';
 
 interface GiftCardProps {
   client: ContentfulClientApi;
+  imageUrl: string;
+  dates: string;
+  price: number;
 }
 
 const GiftCard = ({ client }: GiftCardProps) => {

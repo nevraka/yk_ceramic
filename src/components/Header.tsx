@@ -67,7 +67,9 @@ const Header = ({ client, floating = false }: HeaderProps) => {
           ))}
         </div>
         <div className={styles.right}>
-          <LinkButton href={'/GiftCard'}>Gift Card</LinkButton>
+          <LinkButton className={styles.category} href={'/GiftCard'}>
+            Gift Card
+          </LinkButton>
           <LinkButton
             className={styles.icon}
             href="https://www.instagram.com/yakaart_ceramic/?hl=en"
