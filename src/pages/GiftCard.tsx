@@ -4,6 +4,7 @@ import withClient from '../utils/withClient';
 import Head from 'next/head';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Header from '../components/Header';
+import get from 'lodash/get';
 
 interface GiftCardProps {
   client: ContentfulClientApi;
@@ -26,18 +27,14 @@ const GiftCard = ({ client }: GiftCardProps) => {
     getContentGift();
   }, []);
 
-  const desc =
-    giftCard &&
-    giftCard.fields &&
-    documentToReactComponents(giftCard.fields.text);
-
   return (
     <div>
       <Head>
         <title>Yakaart Ceramic - Gift Card</title>
       </Head>
       <Header />
-      <div>{desc}</div>
+      <div>{documentToReactComponents(get(giftCard, 'fields.text'))}</div>
+      <div>{get(giftCard, 'fields.price')}</div>
     </div>
   );
 };
