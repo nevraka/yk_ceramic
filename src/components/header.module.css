@@ -27,6 +27,7 @@
 }
 .logo {
   cursor: pointer;
+  line-height: 0;
 }
 .category {
   margin: 0 20px;
