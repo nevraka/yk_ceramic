@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import withClient from '../../utils/withClient';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Header from '../../components/Header';
+import Loader from '../../components/Loading';
 
 interface ProductDetailsProps {
   client: ContentfulClientApi;
@@ -29,7 +30,7 @@ const ProductDetails = ({ client }: ProductDetailsProps) => {
   }, [productId]);
 
   if (!product) {
-    return null;
+    return <Loader />;
   }
 
   const imageUrl =

@@ -7,6 +7,7 @@ import withClient from '../utils/withClient';
 import { ContentfulClientApi } from 'contentful';
 import { GrInstagram, GrCart } from 'react-icons/gr';
 import LinkButton from './LinkButton';
+import Loader from './Loading';
 
 interface HeaderProps {
   client: ContentfulClientApi;
@@ -20,7 +21,7 @@ const Header = ({ client, floating = false }: HeaderProps) => {
   useEffect(() => {
     const getCategories = async () => {
       const res = await client.getEntries({ content_type: 'category' });
-      setCategories(res.items);
+      //setCategories(res.items);
     };
     getCategories();
   }, []);
@@ -55,17 +56,21 @@ const Header = ({ client, floating = false }: HeaderProps) => {
             />
           </a>
         </Link>
-        <div className={styles.categories}>
-          {categories.map((category) => (
-            <LinkButton
-              key={category.sys.id}
-              className={styles.category}
-              href={`/Category/${category.sys.id}`}
-            >
-              {category.fields.title}
-            </LinkButton>
-          ))}
-        </div>
+        {categories && categories.length ? (
+          <div className={styles.categories}>
+            {categories.map((category) => (
+              <LinkButton
+                key={category.sys.id}
+                className={styles.category}
+                href={`/Category/${category.sys.id}`}
+              >
+                {category.fields.title}
+              </LinkButton>
+            ))}
+          </div>
+        ) : (
+          <Loader />
+        )}
         <div className={styles.right}>
           <LinkButton className={styles.category} href={'/GiftCard'}>
             Gift Card
