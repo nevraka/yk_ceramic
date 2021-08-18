@@ -1,5 +1,6 @@
 .loaderContainer {
   text-align: center;
+  align-self: center;
 }
 
 .loaderContainer img {
