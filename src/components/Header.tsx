@@ -21,7 +21,7 @@ const Header = ({ client, floating = false }: HeaderProps) => {
   useEffect(() => {
     const getCategories = async () => {
       const res = await client.getEntries({ content_type: 'category' });
-      //setCategories(res.items);
+      setCategories(res.items);
     };
     getCategories();
   }, []);

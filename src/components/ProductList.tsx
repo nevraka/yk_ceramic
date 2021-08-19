@@ -1,7 +1,3 @@
-//categoryId gelecek
-//use effect ıle cekecek
-//map edıp product render edecek
-
 import React, { useState, useEffect } from 'react';
 import ProductListItem from './ProductListItem';
 import withClient from '../utils/withClient';
