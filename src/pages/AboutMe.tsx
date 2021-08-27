@@ -18,23 +18,19 @@ const AboutMe = () => {
         />
         <div className={styles.name}>Yağmur Kabaoğlu</div>
         <div className={styles.text}>
-          <p>
-            I grew up with nature around me, on a small island in the south of
-            Norway.
-          </p>
+          <p>I grew up a beatiful city Istanbul.</p>
           <p>
             Stone, trees and water gives me the inspiration to explore the
             elemental energy of clay as it is transformed into ceramics. The
             potential which resides inside every soft lump, just waiting to be
             shaped and manipulated into seemingly infinite forms and finishes of
             handmade ceramic art. It was the three-dimensional quality of clay
-            which led me to study art & sculpture at Avni Institute of Art in
-            Tel-Aviv in 1993.{' '}
+            which led me to study art & sculpture
           </p>
           <p>
             As an ceramic artist I have ever since been captivated by the
             enjoyment of creating custom made pottery with unique decorative
-            beauty combined with functional simplicity.{' '}
+            beauty combined with functional simplicity.
           </p>
           <p>
             When I moved to Amsterdam in 2002,I immediately started up-new in
