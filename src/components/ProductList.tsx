@@ -4,6 +4,8 @@ import withClient from '../utils/withClient';
 import { ContentfulClientApi } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Loading from './Loading';
+import styles from './ProductList.module.css';
+
 interface ProductListProps {
   client: ContentfulClientApi;
   categoryId: string;
@@ -24,29 +26,31 @@ const ProductList = ({ client, categoryId }: ProductListProps) => {
   }, [categoryId]);
 
   return (
-    <div>
-      {products ? (
-        products.map((product) => {
-          const imageUrl =
-            product.fields.image.length && product.fields.image[0].fields
-              ? `https:${product.fields.image[0].fields.file.url}`
-              : '';
-          return (
-            <ProductListItem
-              key={product.sys.id}
-              imageUrl={imageUrl}
-              description={() =>
-                documentToReactComponents(product.fields.description)
-              }
-              title={product.fields.title}
-              price={product.fields.price}
-              productId={product.sys.id}
-            />
-          );
-        })
-      ) : (
-        <Loading />
-      )}
+    <div className={styles.container}>
+      <div className={styles.items}>
+        {products ? (
+          products.map((product) => {
+            const imageUrl =
+              product.fields.image.length && product.fields.image[0].fields
+                ? `https:${product.fields.image[0].fields.file.url}`
+                : '';
+            return (
+              <ProductListItem
+                key={product.sys.id}
+                imageUrl={imageUrl}
+                description={() =>
+                  documentToReactComponents(product.fields.description)
+                }
+                title={product.fields.title}
+                price={product.fields.price}
+                productId={product.sys.id}
+              />
+            );
+          })
+        ) : (
+          <Loading />
+        )}
+      </div>
     </div>
   );
 };

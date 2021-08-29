@@ -17,7 +17,7 @@
   padding-left: 30px;
   color: #444;
   flex-direction: column;
-  padding-bottom: 10px;
+  padding-bottom: 24px;
   border-radius: 4px;
   font-size: 15px;
   font-weight: 600;
@@ -26,9 +26,9 @@
 }
 .image {
   height: 20%;
-  width: 30%;
-  margin: 10px;
-  border-radius: 6px;
+  width: 50%;
+  padding: 10px;
+  border-radius: 16px;
 }
 .description {
   padding: 10px;
@@ -36,4 +36,14 @@
 }
 .linkButton {
   font-size: 14px;
+}
+
+@media only screen and (max-width: 640px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .image {
+    width: 100%;
+  }
 }
