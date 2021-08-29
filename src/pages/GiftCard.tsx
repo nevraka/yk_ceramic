@@ -4,7 +4,9 @@ import withClient from '../utils/withClient';
 import Head from 'next/head';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Header from '../components/Header';
+import styles from './GiftCard.module.css';
 import get from 'lodash/get';
+import Loader from '../components/Loading';
 
 interface GiftCardProps {
   client: ContentfulClientApi;
@@ -27,14 +29,27 @@ const GiftCard = ({ client }: GiftCardProps) => {
     getContentGift();
   }, []);
 
+  if (!giftCard) {
+    return <Loader />;
+  }
+
+  let imageUrl = get(giftCard, 'fields.media.fields.file.url');
+
   return (
     <div>
       <Head>
         <title>Yakaart Ceramic - Gift Card</title>
       </Head>
       <Header />
-      <div>{documentToReactComponents(get(giftCard, 'fields.text'))}</div>
-      <div>{get(giftCard, 'fields.price')}</div>
+      <div className={styles.imagefirst}>
+        {imageUrl && <img src={`https:${imageUrl}`} />}
+      </div>
+      <div className={styles.text}>
+        {documentToReactComponents(get(giftCard, 'fields.text'))}
+      </div>
+      <div className={styles.price}>
+        Price: {get(giftCard, 'fields.price') + 'Eur'}
+      </div>
     </div>
   );
 };
