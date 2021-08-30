@@ -12,6 +12,7 @@
     "@contentful/rich-text-react-renderer": "^15.0.0",
     "@types/react-slick": "^0.23.5",
     "axios": "^0.21.1",
+    "clsx": "^1.1.1",
     "contentful": "^8.4.2",
     "lodash": "^4.17.21",
     "next": "11.0.1",
@@ -25,9 +26,12 @@
     "@types/lodash": "^4.14.172",
     "@types/nprogress": "^0.2.0",
     "@types/react": "17.0.14",
+    "autoprefixer": "^10.3.3",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
     "nprogress": "^0.2.0",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.9",
     "typescript": "4.3.5"
   }
 }
