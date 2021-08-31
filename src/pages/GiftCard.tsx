@@ -4,7 +4,6 @@ import withClient from '../utils/withClient';
 import Head from 'next/head';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Header from '../components/Header';
-import styles from './GiftCard.module.css';
 import get from 'lodash/get';
 import Loader from '../components/Loading';
 
@@ -41,15 +40,13 @@ const GiftCard = ({ client }: GiftCardProps) => {
         <title>Yakaart Ceramic - Gift Card</title>
       </Head>
       <Header />
-      <div className={styles.imagefirst}>
+      <div className="text-center-last">
         {imageUrl && <img src={`https:${imageUrl}`} />}
       </div>
-      <div className={styles.text}>
+      <div className="text-left p-5">
         {documentToReactComponents(get(giftCard, 'fields.text'))}
       </div>
-      <div className={styles.price}>
-        Price: {get(giftCard, 'fields.price') + 'Eur'}
-      </div>
+      <div className="p-5">Price: {get(giftCard, 'fields.price') + 'Eur'}</div>
     </div>
   );
 };

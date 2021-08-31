@@ -4,7 +4,6 @@ import withClient from '../utils/withClient';
 import { ContentfulClientApi } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Loading from './Loading';
-import styles from './ProductList.module.css';
 
 interface ProductListProps {
   client: ContentfulClientApi;
@@ -26,8 +25,8 @@ const ProductList = ({ client, categoryId }: ProductListProps) => {
   }, [categoryId]);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.items}>
+    <div className="flex flex-col self-center">
+      <div className="flex flex-col self-center max-w-7xl">
         {products ? (
           products.map((product) => {
             const imageUrl =

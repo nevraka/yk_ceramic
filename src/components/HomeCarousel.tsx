@@ -1,6 +1,5 @@
 import React from 'react';
 import Slider from 'react-slick';
-import styles from './HomeCarousel.module.css';
 
 const HomeCarousel = () => {
   const settings = {
@@ -25,10 +24,10 @@ const HomeCarousel = () => {
   }
 
   return (
-    <div className={styles.carousel}>
+    <div className="pb-8">
       <Slider {...settings}>
         {urls.map((u) => (
-          <img className={styles.item} src={u} />
+          <img className="w-screen h-4/6 object-cover" src={u} />
         ))}
       </Slider>
     </div>

@@ -21,8 +21,6 @@
   border-radius: 4px;
   font-size: 15px;
   font-weight: 600;
-  padding-left: 30px;
-  display: flex;
 }
 .image {
   height: 20%;
@@ -36,14 +34,4 @@
 }
 .linkButton {
   font-size: 14px;
-}
-
-@media only screen and (max-width: 640px) {
-  .main {
-    display: flex;
-    flex-direction: column;
-  }
-  .image {
-    width: 100%;
-  }
 }

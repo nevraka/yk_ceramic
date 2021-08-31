@@ -1,10 +1,9 @@
 import React from 'react';
-import styles from './Footer.module.css';
 import LinkButton from './LinkButton';
 
 const Footer = () => {
   return (
-    <div className={styles.footer}>
+    <div className="bg-footer text-footertext border-t border-solid border-ftborder text-center flex-row w-full p-3">
       © 2021 Yaka Art Ceramic. Powered by
       {
         <LinkButton href="https://github.com/nevraka">

@@ -21,14 +21,11 @@
   border-radius: 4px;
   font-size: 15px;
   font-weight: 600;
-  padding-left: 30px;
-  display: flex;
 }
 .image {
   height: 20%;
   width: 30%;
-  margin: 10px;
-  border-radius: 6px;
+  border-radius: 16px;
 }
 .description {
   padding: 10px;
