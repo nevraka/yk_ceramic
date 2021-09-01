@@ -26,7 +26,7 @@ const ProductList = ({ client, categoryId }: ProductListProps) => {
 
   return (
     <div className="flex flex-col self-center">
-      <div className="flex flex-col self-center max-w-7xl">
+      <div className="flex flex-col self-center max-w-7xl w-8/12">
         {products ? (
           products.map((product) => {
             const imageUrl =

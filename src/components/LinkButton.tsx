@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from './LinkButton.module.css';
 
 interface LinkButtonProps {
   href: string;
@@ -17,7 +16,9 @@ const LinkButton = ({
 }: React.PropsWithChildren<
   LinkButtonProps & React.AnchorHTMLAttributes<HTMLAnchorElement>
 >) => {
-  const classes = [styles.linkButton, className].join(' ');
+  const main =
+    'no-underline cursor-pointer text-black hover:underline cursor-pointer hover:text-gray-500';
+  const classes = [main, className].join(' ');
 
   return (
     <Link href={href}>

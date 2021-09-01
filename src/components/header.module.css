@@ -47,3 +47,11 @@
   margin: 0 10px;
   color: black;
 }
+
+@media only screen and (max-width: 375px) {
+  .header {
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+}

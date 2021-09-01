@@ -24,7 +24,7 @@ const Product = ({
         )}
         <div className="flex px-7 text-compactcolor flex-col pb-3 rounded text-sm font-bold pl-8">
           <Link href={`/Product/${productId}`}>
-            <h2 className="mt-3 mr-0 cursor-pointer">{title}</h2>
+            <h2 className="mt-3 mr-0">{title}</h2>
           </Link>
           <span>{` € ${price}.00 Eur`}</span>
         </div>

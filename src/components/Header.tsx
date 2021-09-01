@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import styles from './Header.module.css';
 import logo from '../../public/logo.png';
 import Link from 'next/link';
 import withClient from '../utils/withClient';
@@ -36,63 +35,63 @@ const Header = ({ client, floating = false }: HeaderProps) => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const classes = [styles.header];
-  if (isScrolled) {
-    classes.push(styles.scrolled);
-  }
+  const header =
+    'fixed z-1 top-0 left-0 right-0 p-0 flex flex-row justify-between text-base bg-transparent p-3 duration-500 transition-backgroundColor transition-padding ';
 
+  const scrolled =
+    'bg-scrolled p-1duration-500 transition-backgroundColor transition-padding';
   return (
-    <>
-      {!floating && <div className={styles.placeholder} />}
-      <div className={classes.join(' ')}>
+    <nav>
+      {!floating && <div className="h-24" />}
+      <div className={header + (isScrolled ? scrolled : '')}>
         <Link href="/">
           <a>
             <Image
               width={isScrolled ? 50 : 100}
               height={isScrolled ? 50 : 100}
-              className={styles.logo}
+              className="cursor-pointer leading-none"
               src={logo}
               alt="Picture of the brand"
             />
           </a>
         </Link>
         {categories && categories.length ? (
-          <div className={styles.categories}>
+          <span className="flex items-center ">
             {categories.map((category) => (
               <LinkButton
                 key={category.sys.id}
-                className={styles.category}
+                className="mt-0 mr-5"
                 href={`/Category/${category.sys.id}`}
               >
                 {category.fields.title}
               </LinkButton>
             ))}
-          </div>
+          </span>
         ) : (
           <Loader />
         )}
-        <div className={styles.right}>
-          <LinkButton className={styles.category} href={'/GiftCard'}>
+        <span className="flex flex-row items-center ">
+          <LinkButton className="mt-0 mr-5 text-black" href={'/GiftCard'}>
             Gift Card
           </LinkButton>
           <LinkButton
-            className={styles.icon}
+            className="text-xl mt-0 mr-3"
             href="https://www.instagram.com/yakaart_ceramic/?hl=en"
           >
             <GrInstagram />
           </LinkButton>
           <LinkButton
-            className={styles.icon}
+            className="text-xl mt-0 mr-3"
             href="https://www.shopier.com/ShowProductNew/storefront.php?shop=yakaart&sid=NlN4b0xtZlBhclJWWHR4ZTBfLTFfIF8g"
           >
             <GrCart />
           </LinkButton>
-          <LinkButton className={styles.category} href="/AboutMe">
+          <LinkButton className="mt-0 mr-5 text-black" href="/AboutMe">
             About me
           </LinkButton>
-        </div>
+        </span>
       </div>
-    </>
+    </nav>
   );
 };
 
