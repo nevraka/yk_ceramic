@@ -15,9 +15,9 @@ const ProductListItem = ({
   title,
 }: ProductListItemProps) => {
   return (
-    <div className="m-5 bg-white rounded-3 shadow-productdetail sm:max-w-2x">
-      <div className="flex flex-row sm:flex">
-        <div className="h-1/5 w-6/12 sm:flex-shrink-0">
+    <div className="m-5 bg-white rounded-3 shadow-productdetail">
+      <div className="flex flex-row ">
+        <div className="h-1/5 w-6/12">
           {imageUrl && (
             <img
               src={imageUrl}

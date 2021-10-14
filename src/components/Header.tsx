@@ -56,7 +56,7 @@ const Header = ({ client, floating = false }: HeaderProps) => {
           </a>
         </Link>
         {categories && categories.length ? (
-          <span className="flex items-center ">
+          <div className="flex items-center ">
             {categories.map((category) => (
               <LinkButton
                 key={category.sys.id}
@@ -66,11 +66,11 @@ const Header = ({ client, floating = false }: HeaderProps) => {
                 {category.fields.title}
               </LinkButton>
             ))}
-          </span>
+          </div>
         ) : (
           <Loader />
         )}
-        <span className="flex flex-row items-center ">
+        <div className="flex flex-row items-center ">
           <LinkButton className="mt-0 mr-5 text-black" href={'/GiftCard'}>
             Gift Card
           </LinkButton>
@@ -89,7 +89,7 @@ const Header = ({ client, floating = false }: HeaderProps) => {
           <LinkButton className="mt-0 mr-5 text-black" href="/AboutMe">
             About me
           </LinkButton>
-        </span>
+        </div>
       </div>
     </nav>
   );
