@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import Router from 'next/router';
 import Head from 'next/head';
 import NProgress from 'nprogress';
+import 'github-fork-ribbon-css/gh-fork-ribbon.css';
 NProgress.configure({ showSpinner: false });
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -28,6 +29,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <Component {...pageProps} />
+      <a
+        className="github-fork-ribbon right-bottom fixed"
+        href="https://github.com/nevraka/yk_ceramic"
+        data-ribbon="Fork me on GitHub"
+        title="Fork me on GitHub"
+      >
+        Fork me on GitHub
+      </a>
       <Footer />
     </>
   );
